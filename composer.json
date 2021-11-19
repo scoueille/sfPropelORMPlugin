@@ -5,7 +5,7 @@
     "keywords": ["symfony", "propel", "orm", "active record", "mapping", "database", "persistence"],
     "homepage": "http://www.propelorm.org/",
     "require": {
-        "composer/installers": "*",
+        "composer/installers": "~1.0",
         "propeller-orm/propeller-orm": "~2.0"
     },
     "extra": {
