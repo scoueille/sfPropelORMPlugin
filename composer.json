@@ -4,6 +4,15 @@
     "description": "symfony 1.x plugin for Propel.",
     "keywords": ["symfony", "propel", "orm", "active record", "mapping", "database", "persistence"],
     "homepage": "http://www.propelorm.org/",
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    },
+    "autoload": {
+        "classmap": ["lib/behavior", "lib/addon"]
+    },
+    "include-path": ["lib/behavior", "lib/addon"],
     "require": {
         "composer/installers": "~1.0",
         "propeller-orm/propeller-orm": "~2.0"
