@@ -2,6 +2,7 @@
 
 use Psr\Log\AbstractLogger;
 use Psr\Log\LoggerInterface;
+use Psr\Log\LogLevel;
 
 /*
  * This file is part of the symfony package.
@@ -52,6 +53,33 @@ class sfPropelLogger extends AbstractLogger
      */
     public function log($level, $message, array $context = array())
     {
-        $this->dispatcher->notify(new sfEvent($this, 'application.log', array($message, 'priority' => $level)));
+        $priority = sfLogger::DEBUG;
+        switch ($level) {
+            case LogLevel::EMERGENCY:
+                $priority = sfLogger::EMERG;
+                break;
+            case LogLevel::ALERT:
+                $priority = sfLogger::ALERT;
+                break;
+            case LogLevel::CRITICAL:
+                $priority = sfLogger::CRIT;
+                break;
+            case LogLevel::ERROR:
+                $priority = sfLogger::ERR;
+                break;
+            case LogLevel::WARNING:
+                $priority = sfLogger::WARNING;
+                break;
+            case LogLevel::NOTICE:
+                $priority = sfLogger::NOTICE;
+                break;
+            case LogLevel::INFO:
+                $priority = sfLogger::INFO;
+                break;
+            case LogLevel::DEBUG:
+                $priority = sfLogger::DEBUG;
+                break;
+        }
+        $this->dispatcher->notify(new sfEvent($this, 'application.log', array($message, 'priority' => $priority)));
     }
 }
