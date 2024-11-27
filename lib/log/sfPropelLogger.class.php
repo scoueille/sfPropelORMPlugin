@@ -46,12 +46,11 @@ class sfPropelLogger extends AbstractLogger
      * Primary method to handle logging.
      *
      * @param $level
-     * @param $message the message to log.
+     * @param string|Stringable $message the message to log.
      * @param array $context
      * @return void
-     *
      */
-    public function log($level, $message, array $context = array())
+    public function log($level, string|\Stringable $message, array $context = []): void
     {
         $priority = sfLogger::DEBUG;
         switch ($level) {
