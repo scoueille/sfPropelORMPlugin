@@ -14,6 +14,7 @@
     },
     "include-path": ["lib/behavior", "lib/addon", "lib/log"],
     "require": {
+        "php": ">=8.0",
         "psr/log": "~3.0",
         "composer/installers": "~1.0",
         "propeller-orm/propeller-orm": "dev-master"
