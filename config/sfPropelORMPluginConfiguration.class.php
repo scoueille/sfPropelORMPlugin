@@ -90,7 +90,7 @@ class sfPropelORMPluginConfiguration extends sfPluginConfiguration
       if (class_exists($omClass) && is_subclass_of($omClass, 'BaseObject'))
       {
         $peer = constant($omClass.'::PEER');
-        call_user_func(array($peer, 'clearInstancePool'));
+        call_user_func(array($peer, 'clearInstancePool'), true);
       }
     }
   }
